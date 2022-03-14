@@ -145,19 +145,6 @@ nav .brand {
     border-color: #fff;
 }
 
-@media (min-width: 768px) {
-    .hamburger {
-        display: none;
-    }
-    .navbar {
-        display: flex;
-        /* flex: 1 1 0%; */
-    }
-    .mobile-navbar {
-        display: none;
-    }
-}
-
 .mobile-navbar {
     position: fixed;
     top: 0;
@@ -201,7 +188,10 @@ nav .brand {
     background-color: #2b2e2c;
 }
 
-.mobile-navbar ul li a 
+.mobile-navbar ul li a.is-active {
+    color: var(--main-color);
+    background-color: #2b2e2c;
+}
 
 svg {
     fill: #fff;
@@ -210,4 +200,17 @@ svg {
 
 .mobile-navbar ul li a:hover svg {
     fill: var(--main-color);
+}
+
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+        /* flex: 1 1 0%; */
+    }
+    .mobile-navbar {
+        display: none;
+    }
 }
