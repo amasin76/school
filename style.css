@@ -6,7 +6,7 @@
     --section-padding: 60px;
     --section-background: #f6f6f6;
     --main-duration: .3s;
-    --section-margin: 3rem;
+    --section-margin: 1rem;
 }
 
 * {
@@ -17,9 +17,10 @@
 
 body {
     /* background-color: var(--dark-color); */
-    color: #fff;
+    /* color: #fff; */
     font-family: 'Fira sans', sans-serif;
     overflow-x: hidden;
+    background-color: #eee;
 }
 
 .container {
@@ -164,10 +165,10 @@ nav .brand {
 }
 
 /* FireFox doesn't support backdrop-filter (blur the background) */
-@supports (backdrop-filter: blur(2rem)) {
+@supports (backdrop-filter: blur(1.5rem)) {
     .mobile-navbar {
         background: rgba(0 0% 100% / 0.1);
-        backdrop-filter: blur(2rem);
+        backdrop-filter: blur(1.5rem);
     }
 }
 
@@ -235,7 +236,7 @@ svg {
     background-size: cover; 
     height: 100vh;
     /* position: relative; */
-    width: 100vw;
+    /* width: 100vw; */
     position: relative;
     margin-bottom: var(--section-margin);
 }
@@ -249,23 +250,22 @@ svg {
     
     /* max-width: 100%; */
     color: #000;
+    /* margin-left: 1rem; */
 }
 
 .hero-text h2 {
     font-size: 2.4rem;
     margin-bottom: 4rem;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
 }
 
 .hero-text h4 {
     font-size: 1.6rem;
     margin-bottom: .5rem;
-    margin-left: 1rem;
     letter-spacing: -1px;
 }
 
 .hero-button {
-    margin-left: 1rem;
     margin-top: 3rem;
 }
 
@@ -319,18 +319,6 @@ svg {
     border: none;
 }
 
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-}
-
-svg {
-    color:#000;
-    fill: #000;
-    width: 10%;
-}
-
 @media (min-width: 768px) {
     .hero-text h2 {
         width: 70%;
@@ -341,6 +329,56 @@ svg {
         width: 60%;
         font-size: 1.4rem;
         margin-bottom: .5rem;
-        margin-left: 1.5rem;
+        /* margin-left: 1.5rem; */
+    }
+}
+
+/*==========================
+    - Features
+==========================*/ 
+.features {
+    margin-bottom: var(--section-margin);
+    
+}
+
+.features h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 4.5rem;
+    color: #888;
+}   
+.features-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.feature-text h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.feature-text p {
+    text-align: center;
+}
+
+.feature svg {
+    fill: #000;
+    transform: scale(2.5);
+    margin-bottom: .5rem;
+}
+
+@media (min-width: 768px) {
+    .features-card {
+        flex-direction: row;
     }
 }
