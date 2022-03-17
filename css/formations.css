@@ -333,16 +333,24 @@ svg {
 }
 
 .call-to-action .container {
-    height: 100%;
+    /* height: 100%; */
     padding-block: 4rem;
 }
 
+.call-to-action__text {
+    margin-bottom: .5rem;
+}
+
+
+
 .call-to-action h3 {
-    font-size: 2.5rem;
+    /* font-size: 2.3rem; */
+    font-size: 8.8vw;
 }
 
 .call-to-action a {
     align-self: center;
+    text-align: center;
     padding: 1rem 4rem;
     display: block;
     text-decoration: none;
@@ -354,11 +362,11 @@ svg {
 
 .call-to-action a:hover {
     color: #000;
-    border-color: #000;
 }
 
 .call-to-action p {
     font-size: 1.1rem;
+    /* margin-bottom: 1rem; */
 }
 
 @media (min-width: 768px) {
@@ -366,6 +374,12 @@ svg {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+    .call-to-action__text {
+        margin-bottom: 0rem;
+    }
+    .call-to-action h3 {
+        font-size: 2.3rem;
     }
 }
 
