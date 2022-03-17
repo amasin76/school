@@ -233,6 +233,7 @@ svg {
     max-height: 1080px;
     position: relative;
     margin-bottom: var(--section-margin);
+    box-shadow: 0px 15px 10px -15px #888;
 }
 
 .hero-text {
@@ -324,7 +325,7 @@ svg {
 ==========================*/ 
 .features {
     margin-bottom: var(--section-margin);
-    
+    box-shadow: 0px 15px 10px -15px #888;
 }
 
 .features h2 {
@@ -355,6 +356,7 @@ svg {
 
 .feature-text p {
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .feature svg {
@@ -366,6 +368,67 @@ svg {
 @media (min-width: 768px) {
     .features-card {
         flex-direction: row;
+    }
+}
+
+/*=====================
+    - Call to action
+======================*/
+
+.call-to-action {
+    /* margin-top: 4.2rem; */
+    background-color: #eee;
+}
+
+.call-to-action .container {
+    /* height: 100%; */
+    padding-block: 4rem;
+}
+
+.call-to-action__text {
+    margin-bottom: .5rem;
+}
+
+
+
+.call-to-action h3 {
+    /* font-size: 2.3rem; */
+    font-size: 8.8vw;
+}
+
+.call-to-action a {
+    align-self: center;
+    text-align: center;
+    padding: 1rem 4rem;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: .5rem;
+}
+
+.call-to-action a:hover {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.call-to-action p {
+    font-size: 1.1rem;
+    /* margin-bottom: 1rem; */
+}
+
+@media (min-width: 768px) {
+    .call-to-action .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .call-to-action__text {
+        margin-bottom: 0rem;
+    }
+    .call-to-action h3 {
+        font-size: 2.3rem;
     }
 }
 

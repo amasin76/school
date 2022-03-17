@@ -361,7 +361,8 @@ svg {
 }
 
 .call-to-action a:hover {
-    color: #000;
+    color: #fff;
+    background-color: var(--main-color);
 }
 
 .call-to-action p {
