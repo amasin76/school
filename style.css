@@ -368,3 +368,21 @@ svg {
         flex-direction: row;
     }
 }
+
+/*=====================
+    - Footer
+======================*/
+
+footer {
+    background-color: var(--main-color);
+    padding: 1rem 0;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
