@@ -112,15 +112,64 @@ nav .brand {
     display: none;
     flex: 1 1 0%;
     justify-content: flex-end;
+    align-items: center;
     list-style: none;
     text-decoration: none;
 }
 
 .navbar li {
     margin-left: 1.5rem;
+    position: relative;
 }
 
-.navbar li a {
+.navbar--droplist {
+    position: absolute;
+    top: 2.8rem;
+    left: -1rem;
+    width: 18rem;
+    padding: 1.5rem 0rem;
+    box-shadow: 0 0 10px #888;
+    background-color: #fff;
+    border-radius: .5rem;
+
+    opacity: 0;
+    transform: translateY(-.4rem);
+    transition: opacity var(--main-duration) ease-in-out, opacity var(--main-duration)  ease-in-out;
+    /* cursor: pointer;
+    visibility: hidden; */
+    /* display: none; */
+}
+
+.navbar--droplist a {
+    font-weight: 600;
+    color: #000;
+    transition: var(--main-duration) ease-in-out;
+}
+
+.list-drop.active .navbar--droplist {
+    /* display: block; */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.navbar--droplist li {
+    list-style: none;
+    margin: 0rem;
+}
+
+.navbar--droplist li a {
+    display: flex;
+    padding-block: .5rem;
+    padding-left: 2rem;
+}
+
+.navbar--droplist li a:hover, .navbar--droplist li a:focus {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.navbar .list-simple a {
     color: #fff;
     font-weight: 600;
     transition: var(--main-duration);
@@ -128,23 +177,58 @@ nav .brand {
     border-radius: 1rem;
     border-bottom: 3px solid rgb(34, 34, 34);
     border-top: 1px solid rgb(82, 82, 82);
+
 }
 
-.navbar li:last-child a {
+.navbar .list-drop .item-nested {
+    display:flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    transition: var(--main-duration);
+    border-radius: 1rem;
+    border-top: 1px solid rgb(82, 82, 82);
+}
+
+.navbar .list-drop .item-nested a {
+    color: #fff;
+    font-weight: 600;
+    transition: var(--main-duration);
+    padding: .5rem .5rem .5rem 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.navbar .item-nested span {
+    padding-left: .75rem;
+    padding-right: 1rem;
+    border: 1px solid ;
+    border-color: transparent transparent transparent #888;
+    
+    user-select: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.navbar .item-nested span:hover {
+    color: var(--main-color);
+}
+
+.navbar > li:last-child a {
     background-color: var(--main-color);
     color: #fff;
     border-bottom: 4px solid rgb(34, 34, 34);
 }
 
-.navbar li a.is-active {
+.navbar > li div.is-active {
     border-bottom: 3px solid var(--main-color);
 }
 
-.navbar li a:hover:not(a.is-active) {
+/* .navbar li a:hover:not(a.is-active) {
     color: var(--main-color);
     background-color: #fff;
     border-color: #fff;
-}
+} */
 
 .mobile-navbar {
     position: fixed;
@@ -389,15 +473,13 @@ svg {
 ======================*/
 
 footer {
-    background-color: var(--main-color);
+    background-color: var(--dark-color);
     padding: 1rem 0;
     color: #fff;
     text-align: center;
 }
 
 footer a {
-    text-decoration: none;
     color: inherit;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 600;
 }
