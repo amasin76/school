@@ -133,11 +133,7 @@ nav .brand {
     border-radius: .5rem;
 
     opacity: 0;
-    transform: translateY(-.4rem);
     transition: opacity var(--main-duration) ease-in-out, opacity var(--main-duration)  ease-in-out;
-    /* cursor: pointer;
-    visibility: hidden; */
-    /* display: none; */
 }
 
 .navbar--droplist a {
@@ -149,7 +145,6 @@ nav .brand {
 .list-drop.active .navbar--droplist {
     /* display: block; */
     opacity: 1;
-    transform: translateY(0);
 }
 
 
@@ -224,11 +219,11 @@ nav .brand {
     border-bottom: 3px solid var(--main-color);
 }
 
-/* .navbar li a:hover:not(a.is-active) {
+.navbar > li > a:hover:not(a.is-active) {
     color: var(--main-color);
     background-color: #fff;
     border-color: #fff;
-} */
+}
 
 .mobile-navbar {
     position: fixed;
@@ -256,7 +251,7 @@ nav .brand {
     left: 0;
 }
 
-.mobile-navbar ul li {
+.mobile-navbar > ul > li {
     display: block;
     text-align: center;
     background-color: var(--dark-color);
@@ -264,7 +259,7 @@ nav .brand {
     margin-bottom: .5rem;
 }
 
-.mobile-navbar ul li a {
+.mobile-navbar > ul > li > a {
     display: block;
     color : #fff;
     font-size: 2rem;
@@ -273,7 +268,48 @@ nav .brand {
     padding: 12px 16px;
 }
 
-.mobile-navbar ul li:last-child a {
+.mobile-list-drop div a {
+    display: inline-block;
+    color : #fff;
+    font-size: 2rem;
+    list-style: none;
+    text-decoration: none;
+    padding: 12px 0px;
+    padding-right: .5rem;
+}
+
+.mobile-list-drop div span {
+    color: #fff;
+    font-size: 2rem;
+    padding-left: .5rem;
+
+    border-left: 2px solid #555;
+}
+
+.mobile-list-drop li a {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    padding-block: .5rem;
+    padding-left: 25%;
+    margin-top: 0;
+    text-align: justify;
+
+    border-top: 1px solid #555;
+}
+
+.mobile-list-drop ul {
+    display: none;
+}
+
+.mobile-list-drop:hover ul {    
+    display: block;
+}
+
+.mobile-navbar > ul > li:last-child a {
     display: inline-block;
 }
 .mobile-navbar ul li a:hover {
@@ -480,6 +516,8 @@ footer {
 }
 
 footer a {
+    text-decoration: none;
     color: inherit;
     font-weight: 600;
+    color: var(--main-color);
 }

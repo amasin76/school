@@ -17,16 +17,30 @@
 
             <nav>
                 <a href="#" class="brand">
-                    <img style="width: 50px; display: block;" class="logo--img" src="./assets/accredite-2.png"
+                    <img style="width: 50px; display: block;" class="logo--img" src="../assets/accredite-2.png"
                         alt="accredite">
                     <h1>ECOSIG</h1>
                 </a>
 
                 <ul class="navbar is-active">
-                    <li><a href="/index.html" class="is-active">Home</a></li>
-                    <li><a href="pages/formation.html">Formations</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#inscription">Inscription</a></li>
+                    <li class="list-simple"><a href="/index.html" class="is-active">Home</a></li>
+                    <li class="list-drop">
+                        <div class="item-nested is-active">
+                            <a href="pages/formation.html">Formations</a>
+                            <span class="plus-list">+</span>
+                        </div>
+                        <ul class="navbar--droplist">
+                            <li><a href="">Technicien Spécialisé</a></li>
+                            <li><a href="">Technicien</a></li>
+                            <li><a href="">Diplôme Européen</a></li>
+                            <li><a href="">Certificat Management</a></li>
+                            <li><a href="">Langues Et Communication</a></li>
+                            <li><a href="">Informatique & Bureautique</a></li>
+                            <li><a href="">Centre D'appel</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-simple"><a href="#about">About</a></li>
+                    <li class="list-simple"><a href="#inscription">Inscription</a></li>
                 </ul>
 
                 <button class="hamburger">
@@ -37,10 +51,23 @@
             </nav>
         </div>
     </header>
-    <nav class="mobile-navbar">
+    <nav class="mobile-navbar is-active">
         <ul>
-            <li><a href="/index.html" class="is-active">Home</a></li>
-            <li><a href="pages/formation.html">Formations</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="mobile-list-drop">
+                <div>
+                    <a href="formation.html">Formations</a><span>≡</span>
+                </div>
+                <ul>
+                    <li><a href="">Technicien Spécialisé</a></li>
+                    <li><a href="">Technicien</a></li>
+                    <li><a href="">Diplôme Européen</a></li>
+                    <li><a href="">Certificat Management</a></li>
+                    <li><a href="">Langues Et Communication</a></li>
+                    <li><a href="">Informatique & Bureautique</a></li>
+                    <li><a href="">Centre D'appel</a></li>
+                </ul>
+            </li>
             <li><a href="#about">About</a></li>
             <li><a href="#inscription">Inscription</a></li>
             <li>
@@ -219,10 +246,30 @@
                 <a href="">Inscription <span>➤</span></a>
             </div>
         </section>
+        <section id="contact">
+            <div class="container">
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.122522825775!2d-6.368368884255071!3d32.3354201811076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda387ab3750bd09%3A0xb74589237940fad2!2sECOSIG!5e0!3m2!1sen!2sma!4v1647631022890!5m2!1sen!2sma"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="contact-content">
+                    <h2>Contact Us</h2>
+                    <input type="text" placeholder="Nom & Prénom" required class="contact-form-text">
+                    <input type="email" placeholder="Votre Email" required class="contact-form-text">
+                    <input type="number" placeholder="Votre Numéro (optional)" class="contact-form-text">
+                    <textarea class="contact-form-msg" placeholder="Votre Message"></textarea>
+                    <input class="btn contact-form-btn" type="submit" namr="Submit">
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        All Copyright Reserved © 2022 <a href="">ITRI</a>. Tout droits réservés.
+        Build by <a href="https://www.linkedin.com/in/itri-m-barki-038704232/" target="_blank">ITRI</a> ©
+        <span id="footer-date"></span>.
+        Code Source : <a href="https://github.com/amasin76/school" target="_blank">GitHub</a>.
     </footer>
 
     <script src="app.js"></script>
