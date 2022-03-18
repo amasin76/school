@@ -112,15 +112,59 @@ nav .brand {
     display: none;
     flex: 1 1 0%;
     justify-content: flex-end;
+    align-items: center;
     list-style: none;
     text-decoration: none;
 }
 
 .navbar li {
     margin-left: 1.5rem;
+    position: relative;
 }
 
-.navbar li a {
+.navbar--droplist {
+    position: absolute;
+    top: 2.8rem;
+    left: -1rem;
+    width: 18rem;
+    padding: 1.5rem 0rem;
+    box-shadow: 0 0 10px #888;
+    background-color: #fff;
+    border-radius: .5rem;
+
+    opacity: 0;
+    transition: opacity var(--main-duration) ease-in-out, opacity var(--main-duration)  ease-in-out;
+}
+
+.navbar--droplist a {
+    font-weight: 600;
+    color: #000;
+    transition: var(--main-duration) ease-in-out;
+}
+
+.list-drop.active .navbar--droplist {
+    /* display: block; */
+    opacity: 1;
+}
+
+
+.navbar--droplist li {
+    list-style: none;
+    margin: 0rem;
+}
+
+.navbar--droplist li a {
+    display: flex;
+    padding-block: .5rem;
+    padding-left: 2rem;
+}
+
+.navbar--droplist li a:hover, .navbar--droplist li a:focus {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.navbar .list-simple a {
     color: #fff;
     font-weight: 600;
     transition: var(--main-duration);
@@ -128,19 +172,55 @@ nav .brand {
     border-radius: 1rem;
     border-bottom: 3px solid rgb(34, 34, 34);
     border-top: 1px solid rgb(82, 82, 82);
+
 }
 
-.navbar li:last-child a {
+.navbar .list-drop .item-nested {
+    display:flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    transition: var(--main-duration);
+    border-radius: 1rem;
+    border-bottom: 3px solid rgb(34, 34, 34);
+    border-top: 1px solid rgb(82, 82, 82);
+}
+
+.navbar .list-drop .item-nested a {
+    color: #fff;
+    font-weight: 600;
+    transition: var(--main-duration);
+    padding: .5rem .5rem .5rem 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.navbar .item-nested span {
+    padding-left: .75rem;
+    padding-right: 1rem;
+    border: 1px solid ;
+    border-color: transparent transparent transparent #888;
+    
+    user-select: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.navbar .item-nested span:hover {
+    color: var(--main-color);
+}
+
+.navbar > li:last-child a {
     background-color: var(--main-color);
     color: #fff;
     border-bottom: 4px solid rgb(34, 34, 34);
 }
 
-.navbar li a.is-active {
+.navbar > li a.is-active {
     border-bottom: 3px solid var(--main-color);
 }
 
-.navbar li a:hover:not(a.is-active) {
+.navbar > li a:hover:not(a.is-active) {
     color: var(--main-color);
     background-color: #fff;
     border-color: #fff;
@@ -172,7 +252,7 @@ nav .brand {
     left: 0;
 }
 
-.mobile-navbar ul li {
+.mobile-navbar > ul > li {
     display: block;
     text-align: center;
     background-color: var(--dark-color);
@@ -180,7 +260,7 @@ nav .brand {
     margin-bottom: .5rem;
 }
 
-.mobile-navbar ul li a {
+.mobile-navbar > ul > li > a {
     display: block;
     color : #fff;
     font-size: 2rem;
@@ -189,7 +269,48 @@ nav .brand {
     padding: 12px 16px;
 }
 
-.mobile-navbar ul li:last-child a {
+.mobile-list-drop div a {
+    display: inline-block;
+    color : #fff;
+    font-size: 2rem;
+    list-style: none;
+    text-decoration: none;
+    padding: 12px 0px;
+    padding-right: .5rem;
+}
+
+.mobile-list-drop div span {
+    color: #fff;
+    font-size: 2rem;
+    padding-left: .5rem;
+
+    border-left: 2px solid #555;
+}
+
+.mobile-list-drop li a {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    padding-block: .5rem;
+    padding-left: 25%;
+    margin-top: 0;
+    text-align: justify;
+
+    border-top: 1px solid #555;
+}
+
+.mobile-list-drop ul {
+    display: none;
+}
+
+.mobile-list-drop:hover ul {    
+    display: block;
+}
+
+.mobile-navbar > ul > li:last-child a {
     display: inline-block;
 }
 .mobile-navbar ul li a:hover {
@@ -222,7 +343,6 @@ svg {
         display: none;
     }
 }
-
 /*========================
     - Hero
 ========================*/
@@ -376,8 +496,8 @@ svg {
 ======================*/
 
 .call-to-action {
-    /* margin-top: 4.2rem; */
     background-color: #eee;
+    box-shadow: 0px 15px 10px -15px #888;
 }
 
 .call-to-action .container {
@@ -433,11 +553,99 @@ svg {
 }
 
 /*=====================
+    - Contact
+======================*/
+
+#contact .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block: 4rem 2rem;
+}
+
+.contact-map {
+    width: 100%;
+    height: max(30vh, 12rem);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #888;
+    border-radius: .5rem;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.contact-form-text,
+.contact-form-msg  {
+    width: 100%;
+    height: 2rem;
+    border: 1px solid #888;
+    border-radius: .5rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.contact-form-msg {
+    height: 6rem;
+}
+
+.contact-form-text:focus,
+.contact-form-msg:focus {
+    outline: var(--main-color) solid 2px;
+    border: 0px;
+    border: 1px solid var(--main-color);
+}
+
+.contact-form-btn {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    border: 0px;
+
+    color: #fff;
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    #contact .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .contact-map {
+        width: 100%;
+        height: 21.1rem;
+    }
+    .contact-map iframe {
+        width: 100%;
+        height: 100%;
+    }
+    .contact-form-text,
+    .contact-form-msg  {
+        height: 2rem;
+    }
+    .contact-form-msg {
+        height: 6rem;
+    }
+}
+
+/*=====================
     - Footer
 ======================*/
 
 footer {
-    background-color: var(--main-color);
+    background-color: var(--dark-color);
     padding: 1rem 0;
     color: #fff;
     text-align: center;
@@ -446,6 +654,6 @@ footer {
 footer a {
     text-decoration: none;
     color: inherit;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--main-color);
 }
