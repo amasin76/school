@@ -349,7 +349,6 @@ svg {
 .diplomes {
     margin-top: 6rem;
     margin-bottom: var(--section-margin);
-    
 }
 
 .diplome-content {
@@ -420,6 +419,11 @@ svg {
     
 }
 
+.formations .container {
+    padding-bottom: 4.5rem;
+    box-shadow: 0px 15px 10px -15px #888;
+}
+
 .formations h1 {
     text-align: center;
     margin-bottom: 1rem;
@@ -454,7 +458,7 @@ svg {
 
 .call-to-action .container {
     /* height: 100%; */
-    padding-block: 4rem;
+    padding-block: 3rem;
 }
 
 .call-to-action__text {
