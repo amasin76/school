@@ -25,7 +25,14 @@ window.addEventListener('mousedown', function (event) {
     }
 });
 
+// Update ecole age
+const currentYear = new Date().getFullYear()
+
+const ageElement = document.querySelector(".ecole-age")
+const ecoleBirth = 1997
+const ecoleAge = currentYear - ecoleBirth
+ageElement.textContent = ecoleAge
+
 // Update footer date
 const footerDate = document.querySelector("#footer-date")
-const currentYear = new Date().getFullYear()
 footerDate.textContent = currentYear
