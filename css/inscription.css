@@ -231,6 +231,12 @@ nav .brand {
     border-color: #fff;
 }
 
+.navbar .item-nested > a:hover:not(a.is-active) {
+    color: var(--main-color);
+    background-color: #fff;
+    border-color: #fff;
+}
+
 .mobile-navbar {
     position: fixed;
     top: 0;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/formations.css">
+    <link rel="stylesheet" href="../css/ib.css">
     <title>Formations</title>
 </head>
 
@@ -21,10 +21,23 @@
                 </a>
 
                 <ul class="navbar is-active">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="#formations" class="is-active">Formations</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#inscription">Inscription</a></li>
+                    <li class="list-simple"><a href="/index.html">Home</a></li>
+                    <li class="list-drop">
+                        <div class="item-nested is-active">
+                            <a href="formation.html">Formations</a>
+                            <span class="plus-list">+</span>
+                        </div>
+                        <ul class="navbar--droplist">
+                            <li><a href="formation.html">Tout Formations</a></li>
+                            <li><a href="technicien.html">Technicien</a></li>
+                            <li><a href="ts.html">Technicien Spécialisé</a></li>
+                            <li><a href="ib.html">Informatique & Bureautique</a></li>
+                            <li><a href="lc.html">Langues Et Communication</a></li>
+                            <li><a href="cap.html">Centre D'appel</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-simple"><a href="#about">About</a></li>
+                    <li class="list-simple"><a href="/pages/inscription.html">Inscription</a></li>
                 </ul>
 
                 <button class="hamburger">
@@ -38,9 +51,21 @@
     <nav class="mobile-navbar">
         <ul>
             <li><a href="/index.html">Home</a></li>
-            <li><a href="pages/formation.html" class="is-active">Formations</a></li>
+            <li class="mobile-list-drop">
+                <div>
+                    <a href="formation.html">Formations</a><span>≡</span>
+                </div>
+                <ul>
+                    <li><a href="formation.html">Tout Formations</a></li>
+                    <li><a href="technicien.html">Technicien</a></li>
+                    <li><a href="ts.html">Technicien Spécialisé</a></li>
+                    <li><a href="ib.html">Informatique & Bureautique</a></li>
+                    <li><a href="lc.html">Langues Et Communication</a></li>
+                    <li><a href="cap.html">Centre D'appel</a></li>
+                </ul>
+            </li>
             <li><a href="#about">About</a></li>
-            <li><a href="#inscription">Inscription</a></li>
+            <li><a href="/pages/inscription.html">Inscription</a></li>
             <li>
                 <a class="linkedin" href="#linkedin">
                     <svg viewBox="0 0 128 128">
@@ -71,8 +96,32 @@
         </ul>
     </nav>
 
+    <main>
+        <section class="content">
+            <h1>Formation Centre D'appels</h1>
+            <ul>
+                <li>Technicien de communications formelles et inter-actives</li>
+                <li>Pratiques téléphinques</li>
+                <li>Télé conseil et télévente</li>
+                <li>Développement personnel</li>
+                <li>Informatique appliqiuée</li>
+            </ul>
+        </section>
+        <section class="call-to-action">
+            <div class="container">
+                <div class="call-to-action__text">
+                    <h3>Ready to get started?</h3>
+                    <p>We can't wait to have you on board!</p>
+                </div>
+                <a href="">Inscription <span>➤</span></a>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        All Copyright Reserved © 2022 <a href="">ITRI</a>. Tout droits réservés.
+        Design & Build by <a href="https://www.linkedin.com/in/itri-m-barki-038704232/" target="_blank">ITRI</a> ©
+        <span id="footer-date"></span>,
+        Code Source : <a href="https://github.com/amasin76/school" target="_blank">GitHub</a>.
     </footer>
 
     <script src="../app.js"></script>
